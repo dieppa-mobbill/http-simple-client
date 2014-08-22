@@ -1,0 +1,8 @@
+value1: Hello!
+server:
+  applicationConnectors:
+  - type: http
+    port: 8899
+  adminConnectors:
+  - type: http
+    port: 8889

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+	    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    	http://www.springframework.org/schema/context
+	    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	    http://www.springframework.org/schema/aop
+	    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
+
+
+
+    <!-- AOP -->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+    <bean id="cacheReadAspect"      class="com.cloudyrock.nectirini.aspects.implementations.CacheReadAspect"    />
+    <bean id="cacheWriteAspect"     class="com.cloudyrock.nectirini.aspects.implementations.CacheWriteAspect"   />
+    <bean id="cacheDeleteAspect"    class="com.cloudyrock.nectirini.aspects.implementations.CacheDeleteAspect"  />
+
+
+    <!-- IoC -->
+    <context:component-scan base-package="com.cloudyrock.nectirini.webservice"  />
+    <context:component-scan base-package="com.cloudyrock.nectirini.persistence" />
+    <context:component-scan base-package="com.cloudyrock.nectirini.query" />
+
+    <!-- CORE MMODULE -->
+    <context:component-scan base-package="com.cloudyrock.nectirini.core.service" />
+    <context:component-scan base-package="com.cloudyrock.nectirini.core.dao" />
+    <context:component-scan base-package="com.cloudyrock.nectirini.core.manager" />
+
+
+
+</beans>
