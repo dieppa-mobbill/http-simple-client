@@ -14,7 +14,7 @@ import static java.lang.System.out;
 public class ClientRest {
 
     @GET
-    public Object getRestaurantById(@Context HttpServletRequest req){
+    public Object checkParameters(@Context HttpServletRequest req){
         out.println("\n\n*****************************************************");
         out.println(req.getRequestURL()+"?"+req.getQueryString());
         Map<String, String[]> parameters = req.getParameterMap();
